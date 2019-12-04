@@ -1,7 +1,7 @@
 import React from "react";
 import { Platform, StyleSheet, Text, TouchableOpacity } from "react-native";
 import  LinearGradient from "react-native-linear-gradient";
-import ReactNativeHaptic as Haptics from 'react-native-haptic';
+import ReactNativeHaptic from 'react-native-haptic';
 
 const styles = StyleSheet.create({
   button: {
@@ -75,7 +75,7 @@ class GradientButton extends React.PureComponent {
         style={[styles.button, { height, width }, style]}
         onPress={disabled ? null : () => {
           if (Platform.OS === "ios" && impact === true) {
-            Haptics.impactAsync(Haptics.ImpactFeedbackStyle[impactStyle]);
+            ReactNativeHaptic.impactAsync(ReactNativeHaptic.ImpactFeedbackStyle[impactStyle]);
           }
           if (onPressAction) {
             return onPressAction();
