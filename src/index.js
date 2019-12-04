@@ -73,7 +73,6 @@ class GradientButton extends React.PureComponent {
       <TouchableOpacity
         style={[styles.button, { height, width }, style]}
         onPress={disabled ? null : () => {
-          
           if (onPressAction) {
             return onPressAction();
           }
